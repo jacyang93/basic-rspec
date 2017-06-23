@@ -27,9 +27,9 @@ end
 describe Post, "#save" do
   it "will increase Post count by 1 if all columns present" do
     post_count = Post.all.count
-    user = User.create(email:"bob@smith.com", password: "12345")
+    a = User.create(email:"random@next.com", password: "12345")
 
-    post = Post.new(description: "first description", title: "bob", user_id: user.id)
+    post = Post.new(description: "first description", title: "bob", user_id: a.id)
     post.save
 
     expect(Post.all.count).to eq(post_count+1)
