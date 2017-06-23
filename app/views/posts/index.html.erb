@@ -1,0 +1,13 @@
+<h1> hi <%= current_user.email %> </h1>
+
+<%= form_for Post.new, remote: true do |x| %>
+  <%= x.text_field :title, placeholder: "title here" %>
+  <%= x.text_area :description, placeholder: "description here" %>
+  <%= x.submit 'Submit' %>
+  <% end %>
+
+<div id="post-lists">
+<% @posts.each do |x| %>
+  <%= render partial: 'post', locals: {post: x} %>
+<% end %>
+</div>
